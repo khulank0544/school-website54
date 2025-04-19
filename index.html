@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Манай сургууль</title>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db; 
+            --secondary-color: #ecf0f1; 
+            --text-color: #2c3e50; 
+            --accent-color: #e67e22; 
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    padding: 20px;
+    background: #f9f9f9;
+    color: #2c3e50;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+        }
+
+        header {
+            background: #fff;
+            color: var(--text-color);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+		header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin: 0;
+}
+
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 110px;
+            height: auto;
+            margin-right: 15px;
+        }
+		.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  background: #2c3e50;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu > ul > li > a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu li:hover > a {
+  background: #34495e;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  min-width: 150px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.submenu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+.submenu li a:hover {
+  background: #f0f0f0;
+}
+
+.has-submenu:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+}
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('images/background.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+    position: relative;
+}
+
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .button {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: #f1f5f9; /* зөөлөн цайвар цэнхэр саарал */
+    color: #0f172a;            /* хар саарал */
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid #cbd5e1; /* гадна хүрээ */
+    border-radius: 999px; /* дугуй товч */
+    box-shadow: 0 4px 8px rgba(15, 23, 42, 0.05); /* маш зөөлөн сүүдэр */
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #e0f2fe; /* Hover үед цайвар цэнхэр */
+    color: #0284c7;             /* текстийн өнгө солигдоно */
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.1);
+    transform: translateY(-2px);
+}
+.class-button {
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.class-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+        .section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        .announcement-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .announcement-item {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+
+        .announcement-item:last-child {
+            border-bottom: none;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+		@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .section {
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+    </style>
+</head>
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.jpg" alt="Сургуулийн лого" class="logo">
+            <h1>Хөвсгөл аймаг Их-Уул сумын ЕБС</h1>
+        </div>
+		<nav class="menu">
+  <ul>
+    <li><a href="#home">Нүүр</a></li>
+    <li><a href="#about">Танилцуулга</a></li>
+    <li class="has-submenu">
+      <a href="#lesson">Сургалт</a>
+      <ul class="submenu">
+        <li><a href="#math">Математик</a></li>
+        <li><a href="#physics">Физи</a></li>
+        <li><a href="#">chemistry</a></li>
+      </ul>
+    </li>
+    <li class="has-submenu">
+      <a href="#classes">Ангиуд</a>
+      <ul class="submenu">
+        <li><a href="#6a">6А анги</a></li>
+        <li><a href="#7a">7А анги</a></li>
+        <li><a href="#8a">8А анги</a></li>
+        <li><a href="#9a">9А анги</a></li>
+      </ul>
+    </li>
+    <li><a href="#details">Мэдээлэл</a></li>
+    <li><a href="#activities">Үйл ажиллагаа</a></li>
+    <li><a href="#gallery">Галерей</a></li>
+    <li><a href="#phone">Холбоо барих</a></li>
+  </ul>
+</nav>
+
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Сайн байна уу! Бид сурагчдаа амьдралд бэлтгэх төдий бус харин ирээдүйг бүтээхэд бэлтгэдэг.</h1>
+        <p>Ирээдүйг бүтээгч эрдэмтэн залуусын хөтөч.</p>
+        <a href="#about" class="button">Дэлгэрэнгүй</a>
+    </section>
+
+    <section class="section" id="about">
+        <h2 class="section-title">Бидний тухай</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Түүх</h3>
+                <p>Манай сургууль нь 1940 онд байгуулагдсан. Манай сургууль 56 багш, сурган хүмүүжүүлэгч, 34 ажилчин албан хаагч, 964 суралцагчтайгаар сургалт хүмүүжлийн үйл ажиллагаагаа явуулж байна. Нийт багш удирдах ажилтны 65.4% нь мэргэжлийн зэрэгтэй бөгөөд Монгол Улсын Зөвлөх багш-2, тэргүүлэх багш-21, заах аргач багш-11, магистр багш-9 ажиллаж байна.</p>
+				<h3>СУРГУУЛИЙН ТҮҮХЭН ЗАМНАЛ</h3>
+
+<p>1939 онд: БҮЛГЭМИЙН СУРГУУЛЬ</p>
+<p>1940-1932 онд: БАГА СУРГУУЛЬ</p>
+<p>1962-1964 онд: 7 ЖИЛИЙН СУРГУУЛЬ</p>
+<p>1964-1979 онд: 8 ЖИЛИЙН СУРГУУЛЬ</p>
+<p>1979 оноос: 10 ЖИЛИЙН СУРГУУЛЬ</p>
+<p>2006 оноос: 11 ЖИЛИЙН СУРГУУЛЬ</p>
+<p>2009 оноос: 12 ЖИЛИЙН СУРГУУЛЬ  эдүгээ ЕРӨНХИЙ БОЛОВСРОЛЫН СУРГУУЛЬ болсон түүхтэй.</p>
+            </div>
+            <div class="card">
+                <h3>Эрхэм зорилго</h3>
+                <p>Багшийн хөгжилд дэмжлэг үзүүлэн, ээлжит хичээлийн чанарыг сайжруулж, хүүхэд бүрийн хөгжил, төлөвшилд ахиц гаргана.</p>
+				<h3>Эрхэм зорилт</h3>
+				<h2>1.</h2>
+				<p>Багш нарыг ажлын байранд нь тасралтгүй хөгжүүлэх зорилготой сургуульд суурилсан "МЭРГЭЖЛИЙН ХӨГЖЛИЙН БҮЛЭГ"-ийн үйл ажиллагааг дэмжин ажиллах.</p>
+                <h2>2.</h2>
+                <p>Сургууль, судлагдахуунд суурилсан "ХичээлиЙН СУДАЛГАА"-г зохион байгуулж, БАГШИЙН ЗААХ АРГА, УР ЧАДВАР-ыг дээшлүүлэх, арга туршлагыг түгээн дэлгэрүүлж, дэмжин урамшуулах.</p>
+				<h2>3.</h2>
+				<p>"ШИНЭ СУРГУУЛЬ ДАХин төсөөлөлЛ 2024" төслийн хүрээнд сургуулийн орчны тохижилт хийж, сургалтын орчныг сайжруулах.</p>
+                <h2>4.</h2>
+				<p>"СУРЧ БОЛОВСРОХ ЭРХИЙН АЯН" буюу сурагчдын гүйцэтгэлд үндэслэн хоцрогдлыг багасгаж, массын сургалтын чанарт ахиц гаргах.</p>
+                <h2>5.</h2>
+				<p>Дугуйлан, секцээр дамжуулан сурагчдад ӨВ СОЁЛ, УРЛАГ, ГОО ЗҮЙН төлөвшил, ШИНЖЛЭХ УХААН ТАНИН МЭДЭХҮЙН сонирхол, чадварыг нэмэгдүүлэх зорилготой арга хэмжээг зохион байгуулж, үр дүнг тайлагнах.</p>
+                <h2>6.</h2>
+				<p>Сургуулийн номын сан, дотуур байрыг сургалтын чанар, багш, суралцагчийн хөгжлийг дэмжих ҮЙЛИЙН ОРЧИН болгон ажиллуулах.</p>
+                <h2>7.</h2>
+                <p>Боловсролын харилцаанд оролцогч талуудын хүүхэд хамгаалал, хөгжил, төлөвшлийн талаарх ХАМТЫН АЖИЛЛАГАА-г сайжруулж, ЦОГЦ АРГА ХЭМЖЭЭ-г хэрэгжүүлэх.</p>
+                <h2>8.</h2>
+				<p>Багшийн мэргэжлийн хөгжлийн төлөвлөгөөнд үндэслэн БАГШ, СУРАЛЦАХУЙН ХӨГЖЛИЙГ ДЭМЖИХ үйл ажиллагааг зохион байгуулж, үр дүнг хагас жил, жилийн эцэст тайлагнах.</p>
+            </div>
+            <div class="card">
+                <h3>Багш нар</h3>
+                <p>Манай сургуулийн багш нар ...</p>
+				<li><a href="teachers.html">Багш нар</a></li>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="academics">
+        <h2 class="section-title">Сургалт</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Сургалтын хөтөлбөр</h3>
+                <p>Манай сургуулийн сургалтын хөтөлбөр ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+            <div class="card">
+                <h3>Номын сан</h3>
+                <p>Манай сургуулийн номын сан ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="classes">
+        <h2 class="section-title">Ангиуд</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>6А анги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="angi-6a.html" class="class-button">🔎 Дэлгэрэнгүй</a>
+            </div>
+            <div class="card">
+                <h3>6Б анги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="angi-6b.html" class="class-button">🔎 Дэлгэрэнгүй</a>
+            </div>
+            <div class="card">
+                <h3>6В анги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="angi-6v.html" class="class-button">🔎 Дэлгэрэнгүй</a>
+            </div>
+            <div class="card">
+                <h3>7А анги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+			<div class="card">
+                <h3>7Б анги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+            <div class="card">
+                <h3>7В анги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+            <div class="card">
+                <h3>8А анги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+            <div class="card">
+                <h3>8Б анги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+			<div class="card">
+                <h3>8В анги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+            <div class="card">
+                <h3>9А анги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+			<div class="card">
+                <h3>9Б анги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+            <div class="card">
+                <h3>9В анги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+			<div class="card">
+                <h3>10А анги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+            <div class="card">
+                <h3>10Б анги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+			<div class="card">
+                <h3>10В анги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+            <div class="card">
+                <h3>11Аанги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+			<div class="card">
+                <h3>11Банги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+			<div class="card">
+                <h3>11Ванги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+			<div class="card">
+                <h3>12Аанги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+			<div class="card">
+                <h3>12Банги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+			<div class="card">
+                <h3>12Ванги</h3>
+                <p>Ангийн багш: ...</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+            </div>
+    </section>
+
+    <section class="section" id="activities">
+        <h2 class="section-title">Үйл ажиллагаа</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Клуб, дугуйлан</h3>
+                <p>Сургуулийн бүх клуб, дугуйлангийн жагсаалт</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+            <div class="card">
+                <h3>Спорт</h3>
+                <p>Сургуулийн спортын секц, тэмцээн уралдаан</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+            <div class="card">
+                <h3>Соёл урлаг</h3>
+                <p>Сургуулийн соёл урлагийн арга хэмжээ</p>
+                <a href="#">Дэлгэрэнгүй</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="news">
+        <h2 class="section-title">Мэдээ, зар</h2>
+        <ul class="announcement-list">
+            <li class="announcement-item">
+                <h3>Чуулган зхион байгуулах</h3>
+                <p>2025 оны 4 сарын 25-ны өдөр болно.</p>
+            </li>
+            <li class="announcement-item">
+                <h3>Сургуулийн захирлын нээлттэй цаг</h3>
+                <p>... сарын ...-ны өдөр болно.</p>
+            </li>
+            </ul>
+        <a href="#" class="button">Бүх мэдээг үзэх</a>
+    </section>
+
+    <section class="section" id="gallery">
+        <h2 class="section-title">Галерей</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="images/gallery1.jpg" alt="Зураг 1"></div>
+            <div class="gallery-item"><img src="images/gallery2.jpg" alt="Зураг 2"></div>
+            <div class="gallery-item"><img src="images/gallery3.jpg" alt="Зураг 3"></div>
+            <div class="gallery-item"><img src="images/gallery4.jpg" alt="Зураг 4"></div>
+            </div>
+        <a href="#" class="button">Бүх зургийг үзэх</a>
+    </section>
+
+    <section class="section" id="contact">
+        <h2 class="section-title">Холбоо барих</h2>
+        <p>Хаяг: Ерөнхий боловсролын сургууль</p>
+        <p>Утас: 8515....</p>
+        <p>Имэйл: ...@ikh.uul.edu.mn</p>
+        <a href="#" class="button">Холбоо барих маягт</a>
+    </section>
+
+    <footer>
+        <p>© 2025 ИХ-УУЛ ЕБС| IKH-UUL GENERAL EDUCATION SCHOOL</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,257 @@
+    <!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>6А анги</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            color: #2c3e50;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        .teacher-box {
+            background-color: white;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            margin-bottom: 40px;
+        }
+
+        .teacher-box img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 20px;
+            border: 3px solid #3498db;
+        }
+
+        .teacher-info h2 {
+            margin: 0 0 10px;
+        }
+
+        .student-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .student-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .student-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 3px solid #3498db;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+}
+
+.student-card img:hover {
+    transform: scale(1.05);
+}
+
+
+        .student-card h3 {
+            margin: 10px 0 5px;
+        }
+
+        .student-card p {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            text-decoration: none;
+            background-color: #e67e22;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            background-color: #d35400;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #3498db;
+            color: white;
+        }
+		@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8em;
+        padding: 20px 10px;
+    }
+
+    .teacher-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .teacher-box img {
+        margin: 0 0 15px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .student-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .student-card {
+        padding: 10px;
+    }
+
+    .back-link {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>6А анги</h1>
+</header>
+
+<div class="container">
+
+    <div class="teacher-box">
+        <img src="images/teacher.jpg" alt="Мичидмаа багш >
+        <div class="teacher-info">
+            <h2>Э. Мичидмаа </h2>
+           <li><strong>Мэргэжил:</strong> Биологийн багш</li>
+        </div>
+    </div>
+
+    <div class="student-grid">
+        <div class="student-card">
+            <img src="images/student1.jpg" alt="Сурагч 1">
+            <h3>Ө. Азжаргал</h3>
+            <p>Математикт дуртай, шатар тоглодог.</p>
+        </div>
+        <div class="student-card">
+            <img src="images/student2.jpg" alt="Сурагч 2">
+            <h3>М. Амин-Эрдэнэ</h3>
+            <p>Уран зохиолд авьяастай.</p>
+        </div>
+        <div class="student-card">
+            <img src="images/student1.jpg" alt="Сурагч 3">
+            <h3>Н. Амин-Эрдэнэ
+            <p>Физик, робот техник сонирхдог.</p>
+        </div>
+        <div class="student-card">
+            <img src="images/student2.jpg" alt="Сурагч 2">
+            <h3>Сараа Д.</h3>
+            <p>Уран зохиолд авьяастай.</p>
+        </div>
+		<div class="student-card">
+            <img src="images/student2.jpg" alt="Сурагч 2">
+            <h3>Сараа Д.</h3>
+            <p>Уран зохиолд авьяастай.</p>
+        </div>
+		<div class="student-card">
+            <img src="images/student2.jpg" alt="Сурагч 2">
+            <h3>Сараа Д.</h3>
+            <p>Уран зохиолд авьяастай.</p>
+        </div>
+		<div class="student-card">
+            <img src="images/student2.jpg" alt="Сурагч 2">
+            <h3>Сараа Д.</h3>
+            <p>Уран зохиолд авьяастай.</p>
+        </div>
+		<div class="student-card">
+            <img src="images/student2.jpg" alt="Сурагч 2">
+            <h3>Сараа Д.</h3>
+            <p>Уран зохиолд авьяастай.</p>
+        </div>
+		<div class="student-card">
+            <img src="images/student2.jpg" alt="Сурагч 2">
+            <h3>Сараа Д.</h3>
+            <p>Уран зохиолд авьяастай.</p>
+        </div>
+		<div class="student-card">
+            <img src="images/student2.jpg" alt="Сурагч 2">
+            <h3>Сараа Д.</h3>
+            <p>Уран зохиолд авьяастай.</p>
+        </div><div class="student-card">
+            <img src="images/student2.jpg" alt="Сурагч 2">
+            <h3>Сараа Д.</h3>
+            <p>Уран зохиолд авьяастай.</p>
+        </div><div class="student-card">
+            <img src="images/student2.jpg" alt="Сурагч 2">
+            <h3>Сараа Д.</h3>
+            <p>Уран зохиолд авьяастай.</p>
+        </div>
+		<div class="student-card">
+            <img src="images/student2.jpg" alt="Сурагч 2">
+            <h3>Сараа Д.</h3>
+            <p>Уран зохиолд авьяастай.</p>
+        </div>
+		<div class="student-card">
+            <img src="images/student2.jpg" alt="Сурагч 2">
+            <h3>Сараа Д.</h3>
+            <p>Уран зохиолд авьяастай.</p>
+        </div>
+		<div class="student-card">
+            <img src="images/student2.jpg" alt="Сурагч 2">
+            <h3>Сараа Д.</h3>
+            <p>Уран зохиолд авьяастай.</p>
+        </div>
+		<div class="student-card">
+            <img src="images/student2.jpg" alt="Сурагч 2">
+            <h3>Сараа Д.</h3>
+            <p>Уран зохиолд авьяастай.</p>
+        </div>
+    </div>
+    <a href="index.html" class="back-link">← Буцах</a>
+</div>
+
+<footer>
+    © 2025 Их-Уул ЕБС — 6А анги
+</footer>
+
+</body>
+</html>
